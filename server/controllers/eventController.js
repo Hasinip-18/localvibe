@@ -173,3 +173,41 @@ export const deleteEvent = async (req, res) => {
 
   }
 };
+// Find Nearby Events
+export const getNearbyEvents = async (req, res) => {
+  try {
+
+    const { latitude, longitude, distance } = req.query;
+
+    const events = await Event.find({
+      location: {
+        $near: {
+          $geometry: {
+            type: "Point",
+            coordinates: [
+              Number(longitude),
+              Number(latitude),
+            ],
+          },
+
+          $maxDistance: Number(distance) || 5000,
+        },
+      },
+    });
+
+    res.status(200).json({
+      success: true,
+      count: events.length,
+      events,
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      message: "Server Error",
+    });
+
+  }
+};
