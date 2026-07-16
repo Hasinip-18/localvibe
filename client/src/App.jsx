@@ -28,6 +28,9 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
       </Routes>
+      <footer className="footer">
+  <p>© 2026 LocalVibe | Built with ❤️ </p>
+</footer>
     </BrowserRouter>
   );
 }

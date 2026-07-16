@@ -65,7 +65,7 @@ body{
 }
 .nav-links a{
 
-    color:white;
+    color:rgb(0, 0, 0);
 
     text-decoration:none;
 
@@ -525,4 +525,67 @@ translateY(0);
     color:white;
     font-size:17px;
     cursor:pointer;
+}
+.profile-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#F5F7FB;
+}
+
+.profile-card{
+    background:white;
+    width:420px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.profile-card h1{
+    margin-bottom:25px;
+}
+
+.profile-card p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.profile-card button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#EF4444;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.profile-card button:hover{
+    background:#DC2626;
+}
+.auth-form select {
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  background: white;
+}
+.featured-badge{
+  background:#FFD700;
+  color:#000;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:bold;
+}
+.footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:20px;
 }

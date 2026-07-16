@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 const CreateEvent = () => {
+  const navigate = useNavigate();
+
+useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    alert("Please login first!");
+    navigate("/login");
+  }
+}, [navigate]);
+
   const [event, setEvent] = useState({
     title: "",
     description: "",
@@ -21,6 +33,7 @@ const CreateEvent = () => {
       [e.target.name]: e.target.value,
     });
   };
+  
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -46,8 +59,7 @@ const handleSubmit = async (e) => {
         ],
       },
     };
-    console.log(eventData);
-
+console.log("Sending Event:", eventData);
     await API.post("/events", eventData, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -55,6 +67,8 @@ const handleSubmit = async (e) => {
     });
 
     alert("🎉 Event Created Successfully!");
+
+navigate("/");
 
   } catch (err) {
     console.error(err);
@@ -70,11 +84,46 @@ const handleSubmit = async (e) => {
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmit}>
         <h2>Create Event</h2>
+<input
+  name="title"
+  placeholder="Title"
+  onChange={handleChange}
+  required
+/>
 
-        <input name="title" placeholder="Title" onChange={handleChange} required />
-        <input name="description" placeholder="Description" onChange={handleChange} required />
-        <input name="category" placeholder="Category" onChange={handleChange} required />
-        <input name="price" type="number" placeholder="Price" onChange={handleChange} required />
+<input
+  name="description"
+  placeholder="Description"
+  onChange={handleChange}
+  required
+/>
+
+<select
+  name="category"
+  onChange={handleChange}
+  required
+  defaultValue=""
+>
+  <option value="" disabled>
+    Select Category
+  </option>
+  <option value="Music">Music</option>
+  <option value="Sports">Sports</option>
+  <option value="Food">Food</option>
+  <option value="Workshop">Workshop</option>
+  <option value="Market">Market</option>
+  <option value="Comedy">Comedy</option>
+  <option value="Festival">Festival</option>
+  <option value="Other">Other</option>
+</select>
+
+<input
+  name="price"
+  type="number"
+  placeholder="Price"
+  onChange={handleChange}
+  required
+/>
         <input name="image" placeholder="Image URL" onChange={handleChange} />
         <input name="address" placeholder="Address" onChange={handleChange} required />
 
