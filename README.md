@@ -227,5 +227,4 @@ Add screenshots of:
 
 **Hasini Panjala**
 
-Built as part of the **Persevex MERN Stack Internship Project**.
-Also Used help from different sources **
+Built as part of the Persevex MERN Stack Internship Project. During development, official documentation, online learning resources, and AI-assisted tools were used for learning, debugging, and implementation support.
