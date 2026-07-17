@@ -1,67 +1,129 @@
 # 🌍 LocalVibe
 
-LocalVibe is a full-stack MERN application that helps users discover and manage hyperlocal events around them. Users can register, log in, create events, explore nearby events, and view them on an interactive map.
+A full-stack MERN application for discovering, creating, and exploring hyperlocal events.
+
+## 🚀 Live Demo
+
+Frontend:
+https://localvibe-nine.vercel.app/
+
+Backend:
+https://localvibe-1c6t.onrender.com/
 
 ---
 
-## 🚀 Features
+# 📖 Overview
 
-- User Registration & Login
+LocalVibe is a hyperlocal event discovery platform that enables users to discover events happening nearby, create their own events, and explore them on an interactive map.
+
+The application uses browser geolocation and MongoDB geospatial queries to recommend nearby events.
+
+---
+
+# ✨ Features
+
+## Authentication
+
+- User Registration
+- User Login
 - JWT Authentication
-- Create, View, Update & Delete Events
+- Protected Routes
+- Logout
+
+## Event Management
+
+- Create Event
+- View All Events
+- Update Event
+- Delete Event
+
+## Maps
+
 - Interactive Leaflet Map
 - Browser Geolocation
 - Nearby Event Search
-- Event Categories
-- Protected Routes
-- Responsive UI
+
+## UI
+
+- Responsive Design
+- Hero Landing Page
+- Event Cards
+- Profile Page
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
+## Frontend
 
 - React.js
 - React Router
 - Axios
-- Leaflet
-- React Leaflet
+- HTML5
+- CSS3
+- JavaScript
 
-### Backend
+## Backend
 
 - Node.js
 - Express.js
-- JWT
-- Bcrypt
 
-### Database
+## Database
 
-- MongoDB
+- MongoDB Atlas
 - Mongoose
-- 2dsphere Geospatial Index
+
+## Authentication
+
+- JWT
+- bcryptjs
+
+## Maps
+
+- Leaflet
+- React Leaflet
+
+## Deployment
+
+- Vercel
+- Render
 
 ---
 
-## 📂 Project Structure
+# 📂 Folder Structure
 
-client/
-
-server/
-
-models/
-
-controllers/
-
-routes/
-
-middleware/
+```
+LocalVibe
+│
+├── client
+│   ├── src
+│   ├── assets
+│   ├── components
+│   ├── pages
+│   └── services
+│
+├── server
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── config
+│   └── server.js
+│
+└── README.md
+```
 
 ---
 
-## ⚙️ Installation
+# ⚙ Installation
 
-### Backend
+## Clone Repository
+
+```bash
+git clone <repository-url>
+```
+
+## Backend
 
 ```bash
 cd server
@@ -69,7 +131,7 @@ npm install
 npm run dev
 ```
 
-### Frontend
+## Frontend
 
 ```bash
 cd client
@@ -79,16 +141,91 @@ npm run dev
 
 ---
 
-## 📍 Future Enhancements
+# 🌐 Deployment
 
-- Address Autocomplete
-- RSVP System
-- Featured Events
-- Event Recommendations
-- Premium Listings
+Frontend:
+Vercel
+
+Backend:
+Render
+
+Database:
+MongoDB Atlas
 
 ---
 
-## 👩‍💻 Developed By
+# 📡 API Endpoints
 
-Hasini Panjala
+## Authentication
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+## Events
+
+GET /api/events
+
+POST /api/events
+
+GET /api/events/:id
+
+PUT /api/events/:id
+
+DELETE /api/events/:id
+
+GET /api/events/nearby
+
+---
+
+# 🔒 Authentication
+
+Passwords are securely hashed using bcryptjs.
+
+JWT tokens are generated during login and used to access protected routes.
+
+---
+
+# 🗺 Geolocation
+
+The application requests browser location permission.
+
+MongoDB geospatial queries are used to find nearby events within a specified radius.
+
+Leaflet displays the results on an interactive map.
+
+---
+
+# 📸 Screenshots
+
+Add screenshots of:
+
+- Home
+- Register
+- Login
+- Create Event
+- Event List
+- Nearby Events
+- Interactive Map
+- Profile
+
+---
+
+# 🚀 Future Enhancements
+
+- RSVP System
+- AI Event Recommendations
+- Featured Events
+- Notifications
+- Reviews & Ratings
+- Address Autocomplete
+- Search & Filters
+
+---
+
+# 👩‍💻 Developer
+
+**Hasini Panjala**
+
+Built as part of the **Persevex MERN Stack Internship Project**.
+Also Used help from different sources **
